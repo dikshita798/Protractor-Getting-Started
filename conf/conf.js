@@ -1,7 +1,7 @@
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter')
 
 var reporter = new HtmlScreenshotReporter({
-  dest: 'target/screenshots',
+  dest: 'targets/screenshots',
   filename: 'my-report.html',
 })
 
@@ -33,15 +33,41 @@ exports.config = {
     })
   },
 
-  // Assign the test reporter to each running instance
-  onPrepare: function () {
-    jasmine.getEnv().addReporter(reporter)
-  },
+  // Assign the test reporter to each running instance (using protractor jasmine screenshot reporter)
+  // onPrepare: function () {
+  //   jasmine.getEnv().addReporter(reporter)
+  // },
 
   // Close the report after all tests finish
   afterLaunch: function (exitCode) {
     return new Promise(function (resolve) {
       reporter.afterLaunch(resolve.bind(this, exitCode))
+    })
+  },
+
+  //using jasmine allure reporter
+  // onPrepare: function () {
+  //   var AllureReporter = require('jasmine-allure-reporter')
+  //   jasmine.getEnv().addReporter(
+  //     new AllureReporter({
+  //       resultsDir: 'allure-results',
+  //     })
+  //   )
+  // },
+  onPrepare: function () {
+    var AllureReporter = require('jasmine-allure-reporter')
+    jasmine.getEnv().addReporter(new AllureReporter())
+    jasmine.getEnv().afterEach(function (done) {
+      browser.takeScreenshot().then(function (png) {
+        allure.createAttachment(
+          'Screenshot',
+          function () {
+            return new Buffer.from(png, 'base64')
+          },
+          'image/png'
+        )()
+        done()
+      })
     })
   },
 }

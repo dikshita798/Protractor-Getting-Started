@@ -9,12 +9,15 @@
     "test-angular": "node E://protractor-getting-started//node_modules//protractor//bin//protractor E://protractor-getting-started//node_modules//protractor//example//conf.js",
     "start": "node E://protractor-getting-started//node_modules//protractor//bin//protractor conf//conf.js",
     "protractor-version": "node E://protractor-getting-started//node_modules//protractor//bin//protractor --version",
-    "webdriver-manager-version": "node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager version"
+    "webdriver-manager-version": "node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager version",
+    "allure":"node E://protractor-getting-started//node_modules//allure-commandline//bin//allure"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "allure-commandline": "^2.13.8",
+    "jasmine-allure-reporter": "^1.0.2",
     "protractor": "^7.0.0"
   },
   "devDependencies": {

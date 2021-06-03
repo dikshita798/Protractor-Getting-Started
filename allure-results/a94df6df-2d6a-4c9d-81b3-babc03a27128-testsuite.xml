@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1622722756716' stop='1622722765488'>
+    <name>Calculator</name>
+    <title>Calculator</title>
+    <test-cases>
+        <test-case start='1622722756717' status='passed' stop='1622722765487'>
+            <name>addition test</name>
+            <title>addition test</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='874c3d67-9187-4eb5-9930-bc6e25d2e802-attachment.png' type='image/png' size='21097'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
