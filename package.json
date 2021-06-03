@@ -1,0 +1,20 @@
+{
+  "name": "protractor-getting-started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-webdriver-manager": "node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager update",
+    "test-angular":"node E://protractor-getting-started//node_modules//protractor//bin//protractor E://protractor-getting-started//node_modules//protractor//example//conf.js",
+    "start" : "node E://protractor-getting-started//node_modules//protractor//bin//protractor",
+    "protractor-version":"node E://protractor-getting-started//node_modules//protractor//bin//protractor --version",
+    "webdriver-manager-version":"node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^7.0.0"
+  }
+}
