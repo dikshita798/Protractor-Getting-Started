@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-webdriver-manager": "node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager update",
     "test-angular": "node E://protractor-getting-started//node_modules//protractor//bin//protractor E://protractor-getting-started//node_modules//protractor//example//conf.js",
-    "start": "node E://protractor-getting-started//node_modules//protractor//bin//protractor conf//conf.js",
+    "start": "node E://protractor-getting-started//node_modules//protractor//bin//protractor conf//login-conf.js",
     "protractor-version": "node E://protractor-getting-started//node_modules//protractor//bin//protractor --version",
     "webdriver-manager-version": "node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager version",
-    "allure":"node E://protractor-getting-started//node_modules//allure-commandline//bin//allure"
+    "allure":"node E://protractor-getting-started//node_modules//allure-commandline//bin//allure",
+    "start-webdriver-manager":"node .//node_modules//protractor//node_modules//webdriver-manager//bin//webdriver-manager start"
   },
   "keywords": [],
   "author": "",
