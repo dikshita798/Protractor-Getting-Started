@@ -22,7 +22,7 @@ exports.config = {
     capsPromise.then(function (caps) {
       browserName = caps.get('browserName')
       browserVersion = caps.get('version')
-      platfrom = caps.get('platform')
+      platform = caps.get('platform')
     })
   },
 }

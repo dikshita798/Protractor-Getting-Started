@@ -13,14 +13,15 @@ describe('Login', () => {
     await loginPage.visit()
   })
 
-  it('Login with invalid username and password inputs', async () => {
-    await loginPage.login(userId + 'demo', password + 'demo', description)
-    await expect(element(by.css('div[ng-if="Auth.error"]')).getText()).toEqual(
-      'Username or password is incorrect'
-    )
-  })
+  // it('Login with invalid username and password inputs', async () => {
+  //   await loginPage.login(userId + 'demo', password + 'demo', description)
+  //   await expect(element(by.css('div[ng-if="Auth.error"]')).getText()).toEqual(
+  //     'Username or password is incorrect'
+  //   )
+  // })
 
   it('Login with valid username and password inputs', async () => {
+    await browser.sleep(5000)
     await loginPage.login(userId, password, description)
     await browser.sleep(5000)
     await expect(loginPage.getLoginPageText()).toEqual("You're logged in!!")
