@@ -9,7 +9,7 @@ exports.config = {
   },
   SELENIUM_PROMISE_MANAGER: false,
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 60000,
+    defaultTimeoutInterval: 100000,
   },
   OnPrepare: function () {
     //browser.waitForAngularEnabled(true)

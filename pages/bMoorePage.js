@@ -1,4 +1,4 @@
-const { browser, element } = require('protractor')
+const { browser, element, Key } = require('protractor')
 const BASE_URL = 'https://www.benjaminmoore.com/en-us'
 
 class BMPage {
@@ -34,6 +34,25 @@ class BMPage {
         `div.row.find-your-color div div.row.color-link-cards div div:nth-child(${i}) div:nth-child(${j}) a`
       )
     )
+  }
+
+  async openLinkInNewTab(element) {
+    await browser.actions().mouseMove(element).perform()
+    await browser
+      .actions()
+      .keyDown(Key.CONTROL)
+      .keyDown(Key.SHIFT)
+      .click(element)
+      .perform()
+  }
+
+  async customSwitchTo(originalWindow) {
+    const windows = await browser.getAllWindowHandles()
+    windows.forEach(async (handle) => {
+      if (handle != originalWindow) {
+        await browser.switchTo().window(handle)
+      }
+    })
   }
 }
 module.exports = new BMPage()
